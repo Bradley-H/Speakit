@@ -8,12 +8,13 @@
 
   $: end = false;
 
+  window.SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
   // SPEECH OBJECT //
   let speech = {
-    speechRecognition:
-      window.speechRecognition || window.webkitSpeechRecognition,
-    recon: new window.SpeechRecognition(),
-    getNumber: Math.floor(Math.random() * 100) + 1,
+    recon: new SpeechRecognition(),
+    getNumber: Math.floor(Math.random() * 100 + 1),
     transcript: "",
     spoke: false,
     notNumber: false,
